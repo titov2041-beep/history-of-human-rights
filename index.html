@@ -173,8 +173,8 @@
             box-shadow: 0 5px 0 #d0b69a;
         }
 
-        /* ФИНАЛ — ТОЛЬКО КОРОТКАЯ ФРАЗА */
-        .final-short {
+        /* завершающий блок (теперь без красавчиков, просто итог) */
+        .final-conclusion {
             background: #1e2a2e;
             color: #eae1d7;
             padding: 5rem 2rem;
@@ -184,26 +184,21 @@
             box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
         }
 
-        .final-short h2 {
+        .final-conclusion h2 {
             color: #dfc9b0;
             border-bottom-color: #7f6b58;
         }
 
-        .short-message {
-            font-size: 5rem;
+        .conclusion-text {
+            font-size: 2rem;
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            line-height: 1.2;
-            color: #ecd4b9;
-            text-shadow: 3px 3px 0 #4f3f2e;
-            margin: 2rem 0;
-            word-break: break-word;
-        }
-
-        .short-message i {
-            font-size: 4rem;
-            color: #b48b5a;
-            margin: 0 1rem;
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255,255,240,0.05);
+            border-radius: 60px 20px 60px 20px;
+            border: 1px solid #b7a287;
+            line-height: 1.6;
         }
 
         .footer-note {
@@ -230,8 +225,8 @@
                 text-align: left;
                 font-size: 2.8rem;
             }
-            .short-message {
-                font-size: 3.5rem;
+            .conclusion-text {
+                font-size: 1.6rem;
             }
         }
 
@@ -281,7 +276,7 @@
             Ниже — не просто вехи, а контекст, имена, противоречия. Чтобы за 20 минут услышать не только парадную версию, но и сложность прогресса.
         </p>
 
-        <!-- РАСШИРЕННЫЙ ТАЙМЛАЙН (как в предыдущей версии, много информации) -->
+        <!-- РАСШИРЕННЫЙ ТАЙМЛАЙН -->
         <div class="timeline">
             <!-- 1. Хаммурапи -->
             <div class="timeline-item">
@@ -393,7 +388,7 @@
             </div>
         </div>
 
-        <!-- финальная мысль перед разделом -->
+        <!-- итоговая мысль -->
         <div class="pull-quote">
             «Права человека — не подарок власти, а результат восстаний, чернил и мужества обычных людей.»
         </div>
@@ -405,12 +400,13 @@
         </section>
     </main>
 
-    <!-- ФИНАЛ: ТОЛЬКО "УДАЧИ, КРАСАВЫ" -->
-    <section class="final-short">
+    <!-- ФИНАЛ: теперь просто итоговый блок без каких-либо "красавчиков" -->
+    <section class="final-conclusion">
         <div class="container">
-            <h2>✨ финал ✨</h2>
-            <div class="short-message">
-                <i class="fas fa-hand-peace"></i> Удачи, красавы <i class="fas fa-hand-peace"></i>
+            <h2>вместо послесловия</h2>
+            <div class="conclusion-text">
+                <p>История прав человека продолжается. Она пишется сегодня — вами, нами, всеми, кто не остаётся равнодушным.</p>
+                <p style="margin-top: 1.5rem;"><i class="fas fa-infinity"></i>   права человека не имеют срока давности   <i class="fas fa-infinity"></i></p>
             </div>
         </div>
     </section>
