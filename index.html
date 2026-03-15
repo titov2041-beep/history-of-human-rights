@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>История прав человека · эссе</title>
-    <!-- Подключение шрифтов для элегантности -->
+    <title>Права человека · расширенная история</title>
+    <!-- Прежние шрифты: Cormorant Garamond (для заголовков) и Inter (для текста) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (бесплатная иконка) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (иконки) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: #fbf9f7;  /* тёплый светлый фон */
+            background-color: #fbf9f7;
             color: #2a2a2a;
             font-family: 'Inter', sans-serif;
             font-weight: 300;
@@ -26,7 +26,7 @@
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
             letter-spacing: 0.02em;
@@ -41,11 +41,16 @@
         }
 
         h2 {
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             margin-bottom: 2rem;
             border-bottom: 1px solid rgba(0, 0, 0, 0.15);
             display: inline-block;
             padding-bottom: 0.3rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin: 0.5rem 0 1rem;
         }
 
         .section-subhead {
@@ -57,12 +62,12 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 30px;
         }
 
-        /* header */
+        /* hero (чуть выше, но сохраняем элегантность) */
         .hero {
             min-height: 70vh;
             display: flex;
@@ -76,8 +81,8 @@
         }
 
         .hero p {
-            font-size: 1.35rem;
-            max-width: 700px;
+            font-size: 1.4rem;
+            max-width: 750px;
             margin: 1.5rem auto 0;
             font-style: italic;
             color: #4b3f35;
@@ -91,116 +96,81 @@
             color: #9b7b5e;
         }
 
-        /* timeline */
+        /* расширенная временная шкала — более детальные карточки */
         .timeline {
-            position: relative;
             margin: 5rem 0;
         }
 
         .timeline-item {
             display: flex;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             align-items: flex-start;
-            gap: 2rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
         }
 
         .timeline-year {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 700;
             color: #b48b5a;
             line-height: 1;
-            min-width: 140px;
+            min-width: 160px;
             text-align: right;
-            opacity: 0.8;
+            opacity: 0.9;
         }
 
         .timeline-desc {
             flex: 1;
             background: rgba(255, 255, 255, 0.5);
-            padding: 1.5rem 2rem;
+            padding: 2rem 2.5rem;
             border-radius: 30px 8px 30px 8px;
-            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
-            border-left: 4px solid #b48b5a;
+            box-shadow: 0 12px 28px -10px rgba(0,0,0,0.1);
+            border-left: 5px solid #b48b5a;
             transition: all 0.2s;
         }
 
         .timeline-desc:hover {
-            box-shadow: 0 15px 30px -6px rgba(105, 75, 45, 0.15);
+            box-shadow: 0 20px 35px -10px rgba(105, 75, 45, 0.2);
             background: white;
         }
 
         .timeline-desc h3 {
-            font-size: 1.9rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 0.8rem;
         }
 
         .timeline-desc p {
             font-size: 1.1rem;
+            margin-bottom: 1.2rem;
         }
 
-        /* раздел про красавчиков */
-        .final-warning {
-            background: #1e2a2e;
-            color: #eae1d7;
-            padding: 5rem 2rem;
-            margin-top: 4rem;
-            text-align: center;
-            border-radius: 70px 70px 0 0;
-            box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .final-warning h2 {
-            color: #dfc9b0;
-            border-bottom-color: #7f6b58;
-        }
-
-        .warning-message {
-            font-size: 1.7rem;
-            font-family: 'Cormorant Garamond', serif;
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: rgba(255,255,240,0.03);
-            border-radius: 60px 20px 60px 20px;
-            border: 1px solid #b7a287;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-
-        .warning-message strong {
-            color: #f3d3b5;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .no-beauty {
-            font-size: 3.5rem;
-            margin: 2rem 0 0;
-            opacity: 0.9;
-            font-weight: 600;
-            word-break: break-word;
-        }
-
-        .footer-note {
-            background: #0f0f0f;
-            color: #a6a6a6;
-            padding: 2.5rem 0;
-            text-align: center;
+        .fact-badge {
+            display: inline-block;
+            background: #e9ddcf;
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
             font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-weight: 500;
+            color: #4f3f2e;
+            margin-right: 0.7rem;
+            margin-bottom: 0.5rem;
         }
 
-        .footer-note i {
-            color: #b48b5a;
-            margin: 0 6px;
+        /* блоки с дополнительной информацией (вставки между пунктами) */
+        .inset-box {
+            background: #f3ede7;
+            padding: 2.2rem 2.8rem;
+            border-radius: 80px 20px 80px 20px;
+            margin: 3rem 0 4rem;
+            border: 1px dashed #b48b5a;
+            font-size: 1.2rem;
+            box-shadow: inset 0 0 0 2px #fbf9f7;
         }
 
-        /* простые цитаты */
         .pull-quote {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-family: 'Cormorant Garamond', serif;
             color: #6e4f32;
             background: #f3ede7;
@@ -211,33 +181,86 @@
             box-shadow: 0 5px 0 #d0b69a;
         }
 
+        /* НОВЫЙ ФИНАЛ — ВСЕМ КРАСАВЧИКАМ УДАЧИ */
+        .final-cheers {
+            background: #1e2a2e;
+            color: #eae1d7;
+            padding: 5rem 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            border-radius: 70px 70px 0 0;
+            box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .final-cheers h2 {
+            color: #dfc9b0;
+            border-bottom-color: #7f6b58;
+        }
+
+        .handsome-message {
+            font-size: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background: rgba(230, 210, 190, 0.08);
+            border-radius: 70px 20px 70px 20px;
+            border: 2px solid #b7a287;
+            line-height: 1.6;
+        }
+
+        .handsome-message strong {
+            color: #f5dbba;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .big-wish {
+            font-size: 4rem;
+            margin: 2rem 0 1rem;
+            font-weight: 700;
+            word-break: break-word;
+            color: #ecd4b9;
+            text-shadow: 2px 2px 0 #4f3f2e;
+        }
+
+        .footer-note {
+            background: #0f0f0f;
+            color: #a6a6a6;
+            padding: 2.5rem 0;
+            text-align: center;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-note i {
+            color: #b48b5a;
+            margin: 0 6px;
+        }
+
         /* адаптив */
-        @media (max-width: 700px) {
+        @media (max-width: 800px) {
             .timeline-item {
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0.8rem;
             }
             .timeline-year {
                 text-align: left;
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
-            .final-warning {
-                border-radius: 30px 30px 0 0;
+            .final-cheers {
+                border-radius: 40px 40px 0 0;
             }
-            .warning-message {
-                font-size: 1.3rem;
+            .handsome-message {
+                font-size: 1.6rem;
             }
-            h2 {
-                font-size: 2.2rem;
+            .big-wish {
+                font-size: 3rem;
             }
         }
 
-        /* маленькие детали */
-        .signature-icon {
-            font-size: 2rem;
-            color: #b48b5a;
-            margin: 0 0.5rem;
-        }
+        /* кнопка наверх (стиль сохранён) */
         .btn-empty {
             border: 1px solid #b48b5a;
             background: transparent;
@@ -254,138 +277,190 @@
             background: #b48b5a;
             color: white;
         }
+
         hr {
             border: none;
             height: 1px;
             background: linear-gradient(to right, transparent, #d0b69a, transparent);
-            margin: 2rem 0;
+            margin: 2.5rem 0;
         }
     </style>
 </head>
 <body>
 
-    <!-- Герой (на 20‑минутный рассказ) -->
+    <!-- Герой (такой же элегантный, чуть шире текст) -->
     <section class="hero">
         <div class="container">
-            <h1>Право <br>быть человеком</h1>
-            <p>Краткая история прав личности — от Хаммурапи до Всеобщей декларации. 20 минут, чтобы вспомнить, как хрупко человеческое достоинство.</p>
+            <h1>Хроники <br>человечности</h1>
+            <p>Права человека: от глиняных табличек до ООН. Расширенная история — важные детали, имена, даты. Рассказ на 20 минут.</p>
             <div class="quote-badge">
-                <i class="fas fa-feather-alt"></i> эссе о свободе · равенстве · справедливости
+                <i class="fas fa-scale-balanced"></i> эволюция свободы · семь тысячелетий борьбы
             </div>
         </div>
     </section>
 
-    <!-- Основной контент – таймлайн, укладывается в устный рассказ на 20 минут при размеренном темпе -->
     <main class="container" style="margin-top: -20px; background: #fbf9f7; position: relative; z-index: 2; border-radius: 40px 40px 0 0; padding-top: 3rem;">
-        
-        <!-- короткое вступление -->
-        <p style="font-size: 1.3rem; max-width: 800px; margin-bottom: 3rem;">
-            <i class="fas fa-quote-left" style="color: #b48b5a; margin-right: 10px;"></i> 
-            Права человека — не «подарок» государства. Это результат тысячелетней борьбы, крови и чернил. 
-            Ниже — семь поворотных моментов, о которых стоит рассказать за двадцать минут.
+
+        <!-- Вступление с акцентом на объём информации -->
+        <p style="font-size: 1.3rem; max-width: 900px; margin-bottom: 2rem;">
+            <i class="fas fa-quote-left" style="color: #b48b5a; margin-right: 12px;"></i> 
+            Ниже — не просто вехи, а контекст, имена, противоречия. Чтобы за 20 минут услышать не только парадную версию, но и сложность прогресса.
         </p>
 
-        <!-- Лента времени (7 пунктов) — при чтении вслух с небольшими пояснениями займёт ~15-18 минут -->
+        <!-- =========== РАСШИРЕННЫЙ ТАЙМЛАЙН =========== -->
         <div class="timeline">
-            <!-- 1. Кодекс Хаммурапи (ок. 1754 до н.э.) -->
+
+            <!-- 1. Хаммурапи + детали (кодекс, 282 статьи) -->
             <div class="timeline-item">
-                <div class="timeline-year">~ 1754 до н.э.</div>
+                <div class="timeline-year">ок. 1754 до н.э.</div>
                 <div class="timeline-desc">
                     <h3>Кодекс Хаммурапи</h3>
-                    <p>Первые записанные законы, которые пытались защитить слабых от сильных. Принцип «око за око» ограничивал кровную месть. Раб ещё не считался человеком, но появилась идея, что справедливость можно записать.</p>
+                    <p><span class="fact-badge">282 статьи</span> <span class="fact-badge">чёрный диорит</span> Вавилон, Месопотамия. Один из древнейших сводов. Принцип талиона («око за око») на самом деле вводил <strong>ограничение мести</strong>: нельзя наказать сильнее, чем преступление. Защищал вдов, сирот, должников. Но рабы — вещи, а женщины — зависимое положение. Тем не менее идея, что закон выше личной мести, осталась.</p>
+                    <p><i class="fas fa-gavel" style="color:#b48b5a;"></i> «Чтобы сильный не притеснял слабого, я даровал Вавилону законы справедливости» — Хаммурапи.</p>
                 </div>
             </div>
-            <!-- 2. Кир Великий (539 до н.э.) -->
+
+            <!-- 2. Кир Великий (подробнее) -->
             <div class="timeline-item">
                 <div class="timeline-year">539 до н.э.</div>
                 <div class="timeline-desc">
                     <h3>Цилиндр Кира</h3>
-                    <p>Завоевав Вавилон, персидский царь Кир объявил свободу вероисповедания и отменил рабство для покорённых народов. Часто называют «первой хартией прав человека» (копия хранится в ООН).</p>
+                    <p><span class="fact-badge">первая хартия ООН?</span> <span class="fact-badge">глиняный цилиндр</span> Персидский царь Кир Великий после завоевания Вавилона объявил: разрешил народам вернуться к своим богам, восстановил храмы, отпустил пленных (включая иудеев). Современные историки видят в этом политический расчёт, но текст цилиндра (найден в 1879) называют первым манифестом о правах народов. Копия стоит в штаб-квартире ООН.</p>
                 </div>
             </div>
-            <!-- 3. Великая хартия вольностей (1215) -->
+
+            <!-- 3. Древняя Греция и Рим (добавочный блок, но не перегружаем — вставим как важный промежуточный этап) -->
+            <div class="inset-box">
+                <i class="fas fa-columns" style="color:#b48b5a; font-size: 2rem; float: left; margin-right: 20px;"></i>
+                <strong>V–I вв. до н.э.</strong> Афинская демократия (Перикл) — гражданские права только для свободных мужчин. Римское право (Законы XII таблиц, позже Дигесты) заложило принцип «равенство перед законом» (для граждан). Идея естественного права (Цицерон): «есть закон истинный, разумный, согласный с природой».
+            </div>
+
+            <!-- 4. Великая хартия вольностей 1215 -->
             <div class="timeline-item">
                 <div class="timeline-year">1215</div>
                 <div class="timeline-desc">
                     <h3>Magna Carta</h3>
-                    <p>Английские бароны заставили короля Иоанна признать, что его власть не абсолютна. «Ни один свободный человек не будет заключён в тюрьму иначе, как по закону». Начало habeas corpus.</p>
+                    <p><span class="fact-badge">63 статьи</span> <span class="fact-badge">Англия</span> Король Иоанн Безземельный под давлением баронов подписал документ. Главное: <strong>ст. 39</strong> — «ни один свободный человек не будет арестован, заключён в тюрьму, лишён владения иначе, как по законному приговору равных ему и по закону страны». Это зерно habeas corpus. Позже парламентская борьба расширила права на всех англичан.</p>
                 </div>
             </div>
-            <!-- 4. Билль о правах (1689) -->
+
+            <!-- 5. Билль о правах 1689 + Хабеас корпус акт 1679 -->
             <div class="timeline-item">
-                <div class="timeline-year">1689</div>
+                <div class="timeline-year">1679 / 1689</div>
                 <div class="timeline-desc">
-                    <h3>Английский Билль о правах</h3>
-                    <p>Парламент победил короля. Свобода слова, запрет жестоких наказаний, право на петицию. Монарх — под законом. Эти идеи переплыли океан.</p>
+                    <h3>Habeas Corpus Act & Bill of Rights</h3>
+                    <p><span class="fact-badge">Англия</span> Habeas Corpus (1679) запретил произвольные аресты: суд может потребовать доставить заключённого. Билль о правах (1689) установил верховенство парламента, свободу выборов, право на петицию, запрет жестоких наказаний. Эти идеи колонисты увезут в Америку.</p>
                 </div>
             </div>
-            <!-- 5. Декларация независимости США (1776) -->
+
+            <!-- 6. Американская Декларация независимости (подробнее) -->
             <div class="timeline-item">
                 <div class="timeline-year">1776</div>
                 <div class="timeline-desc">
-                    <h3>«Все люди сотворены равными»</h3>
-                    <p>Джефферсон написал то, что станет взрывом: право на жизнь, свободу и стремление к счастью. Конечно, рабство сохранялось, но был запущен механизм неотчуждаемых прав.</p>
+                    <h3>Декларация независимости США</h3>
+                    <p><span class="fact-badge">Томас Джефферсон</span> «Все люди сотворены равными и наделены Творцом определёнными неотчуждаемыми правами, к числу которых относятся жизнь, свобода и стремление к счастью». Противоречие: Джефферсон сам владел рабами, коренные американцы не считались. Но эти слова стали динамитом для будущих движений — от борьбы с рабством до суфражизма.</p>
+                    <p><i class="fas fa-feather"></i> Влияние: философия Локка, Руссо.</p>
                 </div>
             </div>
-            <!-- 6. Декларация прав человека и гражданина (1789) -->
+
+            <!-- 7. Французская декларация 1789 -->
             <div class="timeline-item">
                 <div class="timeline-year">1789</div>
                 <div class="timeline-desc">
-                    <h3>Французская революция</h3>
-                    <p>«Свобода, собственность, безопасность и сопротивление угнетению». Отмена сословных привилегий, презумпция невиновности. Декларация стала маяком для Европы.</p>
+                    <h3>Декларация прав человека и гражданина</h3>
+                    <p><span class="fact-badge">17 статей</span> <span class="fact-badge">депутаты-учредители</span> «Свобода, собственность, безопасность и сопротивление угнетению». Ст.1: «Люди рождаются и остаются свободными и равными в правах». Отмена сословий, свобода слова, презумпция невиновности. Олимпия де Гуж написала «Декларацию прав женщины и гражданки» (1791) — казнена.</p>
                 </div>
             </div>
-            <!-- 7. Всеобщая декларация прав человека (1948) -->
+
+            <!-- 8. XIX век: отмена рабства, Женевские конвенции -->
+            <div class="inset-box">
+                <strong>XIX век — расширение прав:</strong> 1833 — отмена рабства в Британии. 1865 — 13-я поправка в США. 1864 — первая Женевская конвенция (защита раненых). 1899, 1907 — Гаагские конвенции (правила войны). Начинается международное гуманитарное право.
+            </div>
+
+            <!-- 9. Всеобщая декларация 1948 (детали) -->
             <div class="timeline-item">
                 <div class="timeline-year">1948</div>
                 <div class="timeline-desc">
-                    <h3>Всеобщая декларация ООН</h3>
-                    <p>После ужасов Второй мировой мир сказал: достоинство присуще всем. 30 статей — от свободы слова до права на отдых. Самый переводимый документ в истории.</p>
+                    <h3>Всеобщая декларация прав человека</h3>
+                    <p><span class="fact-badge">30 статей</span> <span class="fact-badge">Элеонора Рузвельт</span> <span class="fact-badge">Рене Кассен</span> После Холокоста и ужасов войны ООН принимает документ. «Все люди рождаются свободными и равными в своём достоинстве». Включает гражданские, политические, экономические и культурные права. Не обязательна юридически, но легла в основу более 80 международных конвенций.</p>
+                    <p><i class="fas fa-globe"></i> Самый переводимый документ — более 500 языков.</p>
+                </div>
+            </div>
+
+            <!-- 10. Важные дополнения: 1966 Пакты, региональные системы -->
+            <div class="timeline-item">
+                <div class="timeline-year">1966</div>
+                <div class="timeline-desc">
+                    <h3>Международные пакты</h3>
+                    <p><span class="fact-badge">МПГПП</span> <span class="fact-badge">МПЭСКП</span> Два пакта (о гражданских и политических правах; об экономических, социальных и культурных) сделали положения Декларации обязательными для государств-участников. Вместе с Декларацией образуют Международный билль о правах человека.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-year">1950–1980</div>
+                <div class="timeline-desc">
+                    <h3>Региональные системы</h3>
+                    <p>Европейская конвенция по правам человека (1953) + Европейский суд. Американская конвенция прав человека (1969). Африканская хартия прав человека и народов (1981). Права становятся наднациональными.</p>
+                </div>
+            </div>
+
+            <!-- 11. Движения за права женщин, детей, меньшинств -->
+            <div class="inset-box">
+                <i class="fas fa-venus-mars"></i> <strong>Права женщин:</strong> 1893 — Новая Зеландия первой дала женщинам голос. 1979 — Конвенция о ликвидации дискриминации женщин. <strong>Права детей:</strong> 1989 — Конвенция о правах ребёнка (самый ратифицированный договор). <strong>Права коренных народов:</strong> 2007 — Декларация ООН.
+            </div>
+
+            <!-- 12. Современные вызовы -->
+            <div class="timeline-item">
+                <div class="timeline-year">сегодня</div>
+                <div class="timeline-desc">
+                    <h3>Новые рубежи</h3>
+                    <p>Цифровые права, ЛГБТК+, экологические права (право на здоровую окружающую среду), право на убежище, права людей с инвалидностью (Конвенция 2006). Права человека никогда не статичны.</p>
                 </div>
             </div>
         </div>
 
-        <!-- небольшая интерлюдия: расширение прав (женщины, цветные, дети) -->
+        <!-- итоговая мысль перед финалом -->
         <div class="pull-quote">
-            <i class="fas fa-female sign-icon"></i>  1920 — право голоса женщин в США · 1965 — избирательный акт (цветное население) · 1989 — Конвенция о правах ребёнка   <i class="fas fa-child"></i>
+            «Права человека — не подарок власти, а результат восстаний, чернил и мужества обычных людей.»
         </div>
 
-        <!-- Концовка 20-минутного рассказа + призыв -->
-        <section style="text-align: center; margin: 5rem 0 3rem;">
-            <h2 style="border-bottom: none;">Права не работают сами</h2>
-            <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto;">За каждую статью заплачено тысячами жизней. Права человека — это не статус, а постоянное усилие.</p>
+        <!-- ===== НОВЫЙ ФИНАЛ: ВСЕМ КРАСАВЧИКАМ УДАЧИ ===== -->
+        <section style="text-align: center; margin: 4rem 0 2rem;">
+            <h2 style="border-bottom: none;">Права — это мы</h2>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">Каждое поколение переписывает границы свободы. И каждый из нас выбирает — быть участником или наблюдателем.</p>
             <hr>
         </section>
     </main>
 
-    <!-- ЗАКЛЮЧИТЕЛЬНЫЙ РАЗДЕЛ: "НЕ БУДЬТЕ КРАСАВЧИКОМ" (как вы просили) -->
-    <section class="final-warning">
+    <!-- РАЗДЕЛ ПРО КРАСАВЧИКОВ (ПОЛНОСТЬЮ ИЗМЕНЁН, ТОЛЬКО УДАЧА) -->
+    <section class="final-cheers">
         <div class="container">
-            <h2>⚠️ Не будьте красавчиком</h2>
-            <div class="warning-message">
-                <p>История прав человека — это не парадная галерея «красавчиков». Это боль, протесты, тюрьмы, отказ молчать.</p>
-                <p style="margin: 2rem 0;"><strong>Красавчик</strong> улыбается, когда сжигают книги. <strong>Красавчик</strong> отворачивается, когда избивают слабого. <strong>Красавчик</strong> говорит: «Меня это не касается».</p>
-                <p>Будьте неудобными. Будьте теми, кто помнит: права завоёвываются, а не дарятся. <br>И никогда — слышите? — никогда не будьте красавчиком.</p>
+            <h2>✨ Всем красавчикам — удачи ✨</h2>
+            <div class="handsome-message">
+                <p>Знаете, история прав человека — это не только про героев и мучеников. Это ещё и про обычных людей, которые просто делают свою работу: судей, медсестёр, учителей, волонтёров. Которые не отворачиваются.</p>
+                <p style="margin: 2rem 0;"><strong>Если вы читаете эти строки и чувствуете,</strong> что вам не всё равно, — вы уже не просто «красавчик».</p>
+                <p>Но даже если вы называете себя красавчиком — пусть удача сопутствует вам. Потому что мир станет лучше, когда каждый красавчик однажды скажет: «Я тоже имею значение, и другие имеют значение».</p>
+                <p style="margin-top: 2rem;"><i class="fas fa-sun"></i>  Дорогие красавчики, счастья, мира и осознанности.  <i class="fas fa-hand-sparkles"></i></p>
             </div>
-            <!-- жирная фраза для запоминания -->
-            <div class="no-beauty">
-                <span style="background: rgba(255,200,140,0.15); padding: 0.5rem 1.5rem; display: inline-block; border-radius: 60px;">✧  не красавчик  ✧</span>
+            <!-- крупная фраза с пожеланием удачи -->
+            <div class="big-wish">
+                🍀  удачи вам  🍀
             </div>
-            <!-- дополнительный акцент (цитата) -->
-            <p style="margin-top: 3rem; font-size: 1.2rem;"><i class="fas fa-dove" style="opacity: 0.6;"></i>   «Если вы нейтральны в ситуациях несправедливости, вы выбрали сторону угнетателя.»  — Десмонд Туту</p>
+            <!-- подпись-пожелание -->
+            <p style="margin-top: 3rem; font-size: 1.3rem;"><i class="fas fa-dove"></i>   Пусть права человека всегда будут с вами.   <i class="fas fa-dove"></i></p>
         </div>
     </section>
 
-    <!-- footer — красивый и содержательный -->
+    <!-- Footer -->
     <footer class="footer-note">
         <div class="container">
-            <p><i class="fas fa-scroll"></i>  История прав человека — эссе для чтения на 20 минут  <i class="fas fa-hourglass-half"></i></p>
-            <p style="margin-top: 1.5rem; font-size: 0.8rem;">Все описанные события — подлинные. Помните о них. <br> Сделано для GitHub — свободное распространение, 2026</p>
-            <p style="margin-top: 1rem;"><i class="fas fa-robot"></i> <i class="fas fa-feather"></i> <i class="fas fa-gavel"></i></p>
+            <p><i class="fas fa-scroll"></i>  Права человека: расширенная история — чтение на 20 минут  <i class="fas fa-hourglass-half"></i></p>
+            <p style="margin-top: 1.5rem; font-size: 0.85rem;">Все факты проверены по открытым источникам. Свободное распространение.<br> Сделано с уважением к прошлому и надеждой на будущее.</p>
+            <p style="margin-top: 1rem;"><i class="fas fa-feather"></i> <i class="fas fa-gavel"></i> <i class="fas fa-hand-holding-heart"></i></p>
         </div>
     </footer>
 
-    <!-- маленькая кнопка наверх — для удобства, но необязательна -->
+    <!-- кнопка наверх (сохранена) -->
     <div style="position: fixed; bottom: 20px; right: 20px;">
         <a href="#" style="background: #b48b5a; color: white; padding: 12px 16px; border-radius: 50px; box-shadow: 0 6px 12px rgba(0,0,0,0.1);"><i class="fas fa-arrow-up"></i></a>
     </div>
