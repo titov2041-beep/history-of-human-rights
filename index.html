@@ -3,120 +3,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>История прав человека</title>
-    <!-- Подключаем CSS файл со стилями -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Подключаем красивый шрифт Google Fonts -->
+    <title>Хроники прав человека</title>
+    <!-- Google Fonts & Bootstrap Icons (для иконок) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- ШАПКА САЙТА (Hero Section) -->
-    <header class="hero">
-        <div class="container">
-            <h1 class="hero-title">Права человека:<br> <span>путешествие сквозь века</span></h1>
-            <p class="hero-subtitle">От Кира Великого до современности — как менялось наше представление о свободе и достоинстве.</p>
-            <a href="#timeline" class="btn">Исследовать историю ↓</a>
+    <!-- ШАПКА С ПАРАЛЛАКСОМ -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tagline">от древности до наших дней</span>
+            <h1 class="hero-title">
+                <span class="title-line">Право быть</span>
+                <span class="title-line highlight">человеком</span>
+            </h1>
+            <p class="hero-description">
+                Путь длиной в 4000 лет: как идеи свободы, равенства и справедливости 
+                завоёвывали мир, проходя через войны, революции и открытия.
+            </p>
+            <a href="#timeline" class="hero-btn">
+                Начать путешествие <i class="bi bi-arrow-down-short"></i>
+            </a>
         </div>
-        <div class="hero-background"></div>
-    </header>
+        <div class="hero-scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
 
-    <!-- ОСНОВНАЯ ЧАСТЬ: ЛЕНТА ВРЕМЕНИ -->
+    <!-- ОСНОВНОЙ ТАЙМЛАЙН -->
     <main id="timeline" class="timeline-section">
         <div class="container">
-            <h2 class="section-title">Ключевые вехи</h2>
+            <div class="section-header">
+                <h2 class="section-title">Хронология прав</h2>
+                <p class="section-subtitle">Ключевые моменты, изменившие отношение к человеку</p>
+            </div>
 
-            <!-- Таймлайн (вертикальная лента) -->
+            <!-- ТАЙМЛАЙН СПИСОК -->
             <div class="timeline">
 
-                <!-- Элемент 1 (Слева) -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">539 г. до н.э.</div>
-                    <div class="timeline-content">
-                        <h3>Цилиндр Кира</h3>
-                        <p>Часто называемый "первой декларацией прав человека". После завоевания Вавилона Кир Великий освободил рабов и провозгласил свободу вероисповедания. Его указы были записаны на глиняном цилиндре.</p>
+                <!-- 1. Цилиндр Кира -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>539 до н.э.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-left">
+                        <div class="card-badge ancient">Древний мир</div>
+                        <h3>Цилиндр Кира <span class="card-subtitle">Первая хартия</span></h3>
+                        <p>Царь Персии Кир Великий после завоевания Вавилона освободил рабов и провозгласил свободу вероисповедания. Этот указ, записанный на глиняном цилиндре, многие историки называют первой декларацией прав человека [citation:3].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-globe"></i> Вавилон</span>
+                            <span class="fact"><i class="bi bi-file-text"></i> Перевод на 6 языков ООН</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Элемент 2 (Справа) -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">1215 г.</div>
-                    <div class="timeline-content">
-                        <h3>Великая хартия вольностей</h3>
-                        <p>Английский король Иоанн Безземельный подписал документ, ограничивающий власть монарха и впервые дающий определенные права свободным людям (например, право на справедливый суд).</p>
+                <!-- 2. Кодекс Хаммурапи (ДОПОЛНЕНИЕ) -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1760 до н.э.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-right">
+                        <div class="card-badge ancient">Древний мир</div>
+                        <h3>Законы Хаммурапи <span class="card-subtitle">Око за око</span></h3>
+                        <p>Один из древнейших правовых кодексов. Хотя принцип талиона ("око за око") сегодня кажется жестоким, для своего времени это было ограничение произвола: наказание должно было соответствовать преступлению и не быть чрезмерным [citation:6][citation:7].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-pin-map"></i> Вавилон</span>
+                            <span class="fact"><i class="bi bi-stone"></i> Высечен на базальте</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Элемент 3 (Слева) -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">1689 г.</div>
-                    <div class="timeline-content">
-                        <h3>Билль о правах (Англия)</h3>
-                        <p>Законодательный акт, который установил верховенство парламента и закрепил такие права, как свобода слова в парламенте и право на обращение к королю.</p>
+                <!-- 3. Античная философия -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>V в. до н.э.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-left">
+                        <div class="card-badge ancient">Античность</div>
+                        <h3>Рождение "естественного права" <span class="card-subtitle">Сократ, Платон, Аристотель</span></h3>
+                        <p>Греческие философы заложили основу идеи о том, что существуют неписаные законы (право по природе), которые выше писаных (права по человеческому установлению). Цицерон в Риме развил это в стройную концепцию [citation:4][citation:8].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-building"></i> Афины, Рим</span>
+                            <span class="fact"><i class="bi bi-chat"></i> Идея справедливости</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Элемент 4 (Справа) -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">1776 г.</div>
-                    <div class="timeline-content">
+                <!-- 4. Великая хартия вольностей -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1215 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-right">
+                        <div class="card-badge medieval">Средневековье</div>
+                        <h3>Великая хартия вольностей <span class="card-subtitle">Magna Carta</span></h3>
+                        <p>Английские бароны вынудили короля Иоанна Безземельного подписать документ, ограничивающий власть монарха. Впервые было установлено, что король подчиняется закону, а свободные люди имеют право на справедливый суд [citation:3][citation:4].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-shield"></i> Хабеас корпус (прообраз)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Билль о правах 1689 -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1689 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-left">
+                        <div class="card-badge early-modern">Новое время</div>
+                        <h3>Билль о правах (Англия) <span class="card-subtitle">Славная революция</span></h3>
+                        <p>Закрепил верховенство парламента и права личности: свобода слова в парламенте, право обращения к королю, запрет жестоких наказаний. Вместе с Хабеас корпус (1679) стал фундаментом английской свободы [citation:3][citation:4].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-bank"></i> Ограничение монархии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Декларация независимости США -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1776 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-right">
+                        <div class="card-badge early-modern">Новое время</div>
                         <h3>Декларация независимости США</h3>
-                        <p>"Мы исходим из той самоочевидной истины, что все люди созданы равными и наделены Творцом определенными неотчуждаемыми правами, к числу которых относятся жизнь, свобода и стремление к счастью."</p>
+                        <p>"Все люди созданы равными и наделены Творцом определенными неотчуждаемыми правами, к числу которых относятся Жизнь, Свобода и стремление к Счастью" — фраза, ставшая манифестом новой эпохи, основанной на идеях Локка и Руссо [citation:3][citation:7].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-flag"></i> Томас Джефферсон</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Элемент 5 (Слева) -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">1789 г.</div>
-                    <div class="timeline-content">
-                        <h3>Декларация прав человека и гражданина (Франция)</h3>
-                        <p>Принятая во время Французской революции, она провозгласила, что "люди рождаются и остаются свободными и равными в правах".</p>
+                <!-- 7. Французская декларация -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1789 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-left">
+                        <div class="card-badge early-modern">Новое время</div>
+                        <h3>Декларация прав человека и гражданина</h3>
+                        <p>Провозгласила, что "люди рождаются и остаются свободными и равными в правах". Декларация утвердила принципы народного суверенитета, свободы, собственности и безопасности, а также презумпцию невиновности [citation:3][citation:6].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-reception-4"></i> "Свобода, равенство, братство"</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Элемент 6 (Справа) -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">1948 г.</div>
-                    <div class="timeline-content">
-                        <h3>Всеобщая декларация прав человека ООН</h3>
-                        <p>Ответ на ужасы Второй мировой войны. Документ, впервые в истории, провозгласил универсальный перечень прав, применимых к каждому человеку на планете.</p>
+                <!-- 8. Отмена рабства (БЕРЛИН) -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1885 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-right">
+                        <div class="card-badge modern">XIX век</div>
+                        <h3>Борьба с рабством</h3>
+                        <p>Берлинская конференция провозгласила, что "торговля рабами запрещена в соответствии с принципами международного права". Это стало результатом долгой борьбы аболиционистов, хотя фактически рабство сохранялось ещё десятилетиями [citation:7].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-link"></i> Первые шаги ООН</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Конец таймлайна -->
 
-            <!-- Дополнительный блок с итогом -->
-            <div class="summary">
-                <p>Этот путь не закончен. История прав человека продолжает писаться каждый день в борьбе за равенство, справедливость и уважение достоинства каждого из нас.</p>
+                <!-- 9. Женевские конвенции -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1864/1949</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-left">
+                        <div class="card-badge modern">Гуман. право</div>
+                        <h3>Женевские конвенции <span class="card-subtitle">Красный Крест</span></h3>
+                        <p>Заложили основы международного гуманитарного права: защита раненых, военнопленных, гражданского населения во время войны. Идея о том, что даже война имеет пределы жестокости [citation:3].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-hospital"></i> Защита медиков</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Лига Наций -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1919 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-right">
+                        <div class="card-badge modern">XX век</div>
+                        <h3>Лига Наций <span class="card-subtitle">Версальский договор</span></h3>
+                        <p>Первая международная организация, целью которой было предотвращение войн. Она также потребовала от новых государств защиты прав меньшинств — важный прецедент международного контроля [citation:7].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-brightness-alt-high"></i> Идея Вудро Вильсона</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Устав ООН -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1945 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-left">
+                        <div class="card-badge modern">XX век</div>
+                        <h3>Создание ООН</h3>
+                        <p>Ответ на ужасы Второй мировой. Преамбула Устава провозглашает решимость "вновь утвердить веру в основные права человека, в достоинство и ценность человеческой личности" [citation:3][citation:7].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-calendar"></i> 24 октября — День ООН</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Всеобщая декларация 1948 -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1948 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-right milestone">
+                        <div class="card-badge modern">XX век</div>
+                        <h3>Всеобщая декларация прав человека <span class="card-subtitle">Международный билль</span></h3>
+                        <p>Первый универсальный документ, провозгласивший перечень прав, принадлежащих каждому человеку независимо от расы, цвета кожи, пола, языка, религии или убеждений. Элеонора Рузвельт назвала её "Великой хартией для всего человечества" [citation:3][citation:7].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-star"></i> 30 статей</span>
+                            <span class="fact"><i class="bi bi-translate"></i> 500+ переводов</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Международные пакты -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1966 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-left">
+                        <div class="card-badge modern">XX век</div>
+                        <h3>Пакты о правах человека</h3>
+                        <p>Декларация 1948 года не была обязательной. В 1966 году ООН приняла два обязательных для участников документа: о гражданских и политических правах и об экономических, социальных и культурных правах [citation:1][citation:7].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-briefcase"></i> СССР ратифицировал в 1973</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Права женщин (ДОПОЛНЕНИЕ) -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1979 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-right">
+                        <div class="card-badge modern">XX век</div>
+                        <h3>Конвенция о ликвидации дискриминации женщин</h3>
+                        <p>Важнейший документ, определивший дискриминацию по признаку пола и установивший обязательства государств по её искоренению во всех сферах — от политики до семьи [citation:7].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-gender-female"></i> CEDAW</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Права детей -->
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1989 г.</span>
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-card card-left">
+                        <div class="card-badge modern">XX век</div>
+                        <h3>Конвенция о правах ребенка</h3>
+                        <p>Самый ратифицированный международный договор в истории. Провозгласил, что дети имеют особые права на защиту, образование, здравоохранение и развитие [citation:7].</p>
+                        <div class="card-footer">
+                            <span class="fact"><i class="bi bi-emoji-smile"></i> 196 стран-участниц</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- ПОДВАЛ -->
-    <footer>
-        <div class="container">
-            <p>© 2024 История прав человека. Сайт создан для образовательных целей.</p>
+    <!-- БЛОК С ИТОГОВОЙ МЫСЛЬЮ -->
+    <section class="legacy-section">
+        <div class="legacy-content">
+            <h2>Путь не окончен</h2>
+            <p>
+                История прав человека — это не музейный экспонат. Она пишется каждый день, 
+                когда мы боремся с неравенством, защищаем уязвимых или просто уважаем чужое достоинство. 
+                Как говорили древние: <strong>"Homo sum, humani nihil a me alienum puto"</strong> 
+                (Я человек, и ничто человеческое мне не чуждо).
+            </p>
+            <div class="legacy-stats">
+                <div class="stat">
+                    <span class="stat-number">30</span>
+                    <span class="stat-label">статей во ВДПЧ</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">196</span>
+                    <span class="stat-label">государств-членов ООН</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">4000+</span>
+                    <span class="stat-label">лет истории</span>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+        <p>© 2024 Хроники прав человека. Образовательный проект. Данные основаны на открытых источниках [citation:1][citation:3][citation:4].</p>
     </footer>
 
-    <!-- Небольшой скрипт для плавной прокрутки -->
+    <!-- Небольшой скрипт для плавной прокрутки и анимации при скролле (AOS-like вручную) -->
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        // Плавный скролл для якоря
+        document.querySelector('.hero-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector('#timeline');
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Простая анимация появления при скролле
+        const items = document.querySelectorAll('.timeline-item');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
+        }, { threshold: 0.2 });
+
+        items.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
         });
     </script>
 </body>
