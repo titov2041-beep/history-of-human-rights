@@ -1,6 +1,5 @@
 /* styles.css */
 
-/* Сброс стилей и базовые настройки */
 * {
     margin: 0;
     padding: 0;
@@ -9,19 +8,19 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    background-color: #faf9f6;
+    color: #1e1e2f;
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
     overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
-/* Стили для шапки (Hero) */
+/* ===== HERO SECTION ===== */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -30,100 +29,159 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    overflow: hidden;
+    background: #0b0b1a; /* fallback */
+    background-image: url('https://images.unsplash.com/photo-1589519160732-57fc498fbcac?q=80&w=2070&auto=format&fit=crop'); /* Замените на свою или удалите */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* параллакс-эффект */
 }
 
-.hero-background {
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-    background-size: cover;
-    opacity: 0.3;
-    pointer-events: none;
+    background: linear-gradient(135deg, rgba(10, 10, 30, 0.9) 0%, rgba(40, 20, 60, 0.85) 100%);
+    z-index: 1;
 }
 
-.hero .container {
+.hero-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-tagline {
+    display: inline-block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: rgba(255, 215, 0, 0.2);
+    padding: 8px 18px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
-.hero-title span {
-    background: linear-gradient(45deg, #ffd700, #ffa500);
+.title-line {
+    display: block;
+}
+
+.title-line.highlight {
+    background: linear-gradient(135deg, #ffd700, #ffa500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: none;
 }
 
-.hero-subtitle {
-    font-size: clamp(1rem, 4vw, 1.25rem);
-    margin-bottom: 2rem;
-    opacity: 0.95;
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 32px;
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: white;
-    color: #667eea;
-    text-decoration: none;
+    color: #1e1e2f;
+    padding: 14px 36px;
     border-radius: 50px;
+    text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    border: 2px solid transparent;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+.hero-btn:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
+    transform: scale(1.05);
 }
 
-/* Секция с таймлайном */
-.timeline-section {
-    padding: 80px 0;
-    background-color: #f8f9fa;
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 60px;
-    color: #333;
+.mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
     position: relative;
 }
 
-.section-title::after {
+.mouse::before {
     content: '';
     position: absolute;
-    bottom: -15px;
+    top: 6px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    width: 4px;
+    height: 8px;
+    background: white;
     border-radius: 2px;
+    animation: scroll 1.5s infinite;
 }
 
-/* Сам таймлайн */
+@keyframes scroll {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    70% { opacity: 0; transform: translateX(-50%) translateY(15px); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(15px); }
+}
+
+/* ===== TIMELINE SECTION ===== */
+.timeline-section {
+    padding: 100px 0;
+    background-color: #faf9f6;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1e1e2f;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    border-bottom: 2px solid #e0d6c0;
+    padding-bottom: 20px;
+}
+
+/* Таймлайн контейнер */
 .timeline {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px 0;
 }
 
 /* Центральная линия */
@@ -133,170 +191,259 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px;
+    width: 3px;
     height: 100%;
-    background: linear-gradient(180deg, #667eea, #764ba2);
+    background: linear-gradient(180deg, #b8860b, #4a2c2c, #1e3c5a);
     border-radius: 2px;
+    z-index: 0;
 }
 
 /* Элемент таймлайна */
 .timeline-item {
-    position: relative;
-    margin: 40px 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 2;
 }
 
-/* Точка на линии */
-.timeline-dot {
+/* Маркер с датой (всегда по центру) */
+.timeline-marker {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background: white;
-    border: 4px solid #667eea;
-    border-radius: 50%;
-    z-index: 2;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
-}
-
-.timeline-item:hover .timeline-dot {
-    background: #667eea;
-    transform: translateX(-50%) scale(1.2);
-}
-
-/* Дата */
-.timeline-date {
-    width: 45%;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #667eea;
-    text-align: right;
-    padding-right: 30px;
-}
-
-/* Контент (карточка) */
-.timeline-content {
-    width: 45%;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(102, 126, 234, 0.1);
-}
-
-.timeline-item:hover .timeline-content {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-}
-
-.timeline-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
     color: #333;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: white;
+    padding: 6px 14px;
+    border-radius: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #fff;
 }
 
-.timeline-content p {
-    color: #666;
-    font-size: 1rem;
+.marker-dot {
+    width: 16px;
+    height: 16px;
+    background: #b8860b;
+    border: 3px solid white;
+    border-radius: 50%;
+    margin-top: 4px;
+    box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.3);
 }
 
-/* Чередование позиций */
-.timeline-item:nth-child(even) .timeline-date {
-    text-align: left;
-    padding-left: 30px;
-    padding-right: 0;
-    order: 2;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    order: 1;
-}
-
-/* Блок с итогом */
-.summary {
-    max-width: 800px;
-    margin: 60px auto 0;
-    padding: 40px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+/* Карточки */
+.timeline-card {
+    width: 42%;
+    background: white;
     border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 35px -8px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 25px 40px -8px rgba(100, 50, 150, 0.25);
+}
+
+/* Чередование: слева и справа */
+.card-left {
+    margin-right: auto;
+}
+
+.card-right {
+    margin-left: auto;
+}
+
+/* Бадж эпохи */
+.card-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: #eae4d9;
+    color: #4a3b2c;
+    margin-bottom: 15px;
+}
+
+.card-badge.ancient { background: #d1c4a0; color: #3e2e1f; }
+.card-badge.medieval { background: #b0a18a; color: #2b1e0f; }
+.card-badge.early-modern { background: #a5b8c5; color: #123456; }
+.card-badge.modern { background: #c5d5e4; color: #0a3144; }
+
+.timeline-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1e1e2f;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #777;
+    display: block;
+    margin-top: 4px;
+}
+
+.timeline-card p {
+    color: #444;
+    margin: 15px 0;
+}
+
+.card-footer {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.card-footer .fact {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-footer i {
+    color: #b8860b;
+}
+
+/* Особый стиль для ключевого события */
+.milestone {
+    border-left: 6px solid #ffd700;
+}
+
+/* ===== LEGACY SECTION ===== */
+.legacy-section {
+    background: linear-gradient(135deg, #1e1e2f 0%, #2d1f3a 100%);
+    color: white;
+    padding: 80px 20px;
     text-align: center;
-    font-size: 1.2rem;
-    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
 }
 
-.summary p {
-    margin: 0;
+.legacy-content {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* Подвал */
-footer {
-    background-color: #333;
-    color: #fff;
+.legacy-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #fff, #e0b0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.legacy-content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 50px;
+}
+
+.legacy-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffd700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #111;
+    color: #aaa;
     text-align: center;
-    padding: 30px 0;
-}
-
-footer p {
-    opacity: 0.8;
+    padding: 30px;
     font-size: 0.9rem;
 }
 
-/* Адаптация для мобильных устройств */
+/* ===== АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ ===== */
 @media (max-width: 768px) {
     .timeline::before {
         left: 30px;
     }
 
+    .timeline-marker {
+        left: 30px;
+        transform: translateX(-50%);
+        background: transparent;
+        box-shadow: none;
+        color: #b8860b;
+        font-weight: 700;
+    }
+
+    .marker-dot {
+        width: 20px;
+        height: 20px;
+        background: #b8860b;
+    }
+
     .timeline-item {
         flex-direction: column;
         align-items: flex-start;
-        margin: 30px 0;
+        margin-left: 40px;
     }
 
-    .timeline-dot {
-        left: 30px;
-        transform: translateX(-50%);
-    }
-
-    .timeline-date {
+    .timeline-card {
         width: 100%;
-        text-align: left !important;
-        padding-left: 70px !important;
-        padding-right: 0 !important;
-        margin-bottom: 10px;
-        font-size: 1.2rem;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 25px;
     }
 
-    .timeline-content {
-        width: 100%;
-        margin-left: 50px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-date {
-        order: 0;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content {
-        order: 0;
+    .card-left, .card-right {
+        margin: 20px 0 0 0;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .section-title {
         font-size: 2rem;
     }
 
-    .summary {
-        padding: 30px 20px;
-        margin: 40px 20px 0;
+    .legacy-stats {
+        gap: 25px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
     }
 }
