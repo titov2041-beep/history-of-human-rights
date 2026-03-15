@@ -3,370 +3,392 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Эволюция прав · цифровой архив</title>
-    <!-- Шрифты и иконки -->
+    <title>История прав человека · эссе</title>
+    <!-- Подключение шрифтов для элегантности -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (бесплатная иконка) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- АНИМИРОВАННЫЙ ФОН (Canvas для частиц) -->
-    <canvas id="particleCanvas"></canvas>
-    
-    <!-- ОСНОВНОЙ КОНТЕНТ -->
-    <div class="content-wrapper">
-        
-        <!-- ХЕДЕР С ГЛУБОКИМ ЗАГОЛОВКОМ -->
-        <header class="header">
-            <div class="header-container">
-                <div class="logo">
-                    <i class="fas fa-scale-balanced"></i>
-                    <span>HUMAN RIGHTS · ARCHIVE</span>
-                </div>
-                <nav class="nav">
-                    <a href="#" class="nav-link active">Главная</a>
-                    <a href="#" class="nav-link">Хронология</a>
-                    <a href="#" class="nav-link">Документы</a>
-                </nav>
-            </div>
-        </header>
+        body {
+            background-color: #fbf9f7;  /* тёплый светлый фон */
+            color: #2a2a2a;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
 
-        <main>
-            <!-- HERO СЕКЦИЯ С ДИНАМИЧНЫМ ЗАГОЛОВКОМ -->
-            <section class="hero-section">
-                <div class="hero-content">
-                    <span class="hero-pre-title">история длиною в тысячелетия</span>
-                    <h1 class="hero-title">
-                        <span class="title-word">Право</span>
-                        <span class="title-word accent">на</span>
-                        <span class="title-word">достоинство</span>
-                    </h1>
-                    <p class="hero-description">
-                        От глиняных табличек Месопотамии до цифровых манифестов XXI века — 
-                        как человечество училось защищать самое ценное.
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-num">4000+</span>
-                            <span class="stat-label">лет эволюции</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-num">12</span>
-                            <span class="stat-label">ключевых эпох</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-num">∞</span>
-                            <span class="stat-label">путь продолжается</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-scroll">
-                    <div class="scroll-circle">
-                        <i class="fas fa-arrow-down"></i>
-                    </div>
-                </div>
-            </section>
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
 
-            <!-- ФИЛОСОФСКИЙ БЛОК (вместо таймлайна - концептуальные эпохи) -->
-            <section class="eras-section">
-                <div class="container">
-                    <div class="section-header">
-                        <h2 class="section-title">Эпохи осознания</h2>
-                        <p class="section-subtitle">Права человека не появляются внезапно — они вызревают в муках истории</p>
-                    </div>
+        h1 {
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
 
-                    <!-- ERA 1: Древний мир -->
-                    <div class="era-card">
-                        <div class="era-number">01</div>
-                        <div class="era-content">
-                            <div class="era-header">
-                                <h3 class="era-title">Зарождение идеи</h3>
-                                <span class="era-period">≈ 3000–500 до н.э.</span>
-                            </div>
-                            <div class="era-grid">
-                                <div class="era-info">
-                                    <p class="era-text">
-                                        В Древнем Египте появилась идея <strong>Маат</strong> — универсальной справедливости, 
-                                        которой подчиняются даже боги и фараоны. В Вавилоне <strong>Кодекс Хаммурапи</strong> 
-                                        впервые провозгласил, что закон должен быть видимым и единым для всех (хотя и с поправкой на сословия). 
-                                        Персидский царь <strong>Кир Великий</strong> в 539 году до н.э. освободил рабов и разрешил народам 
-                                        возвращаться на родину — его цилиндр называют первой декларацией прав человека.
-                                    </p>
-                                    <p class="era-quote">
-                                        «Я, Кир, царь мира, великий царь, могучий царь... объявляю, что все люди будут свободны в своем вероисповедании и смогут жить в мире».
-                                    </p>
-                                </div>
-                                <div class="era-impact">
-                                    <h4><i class="fas fa-seedling"></i> Посеянное зерно</h4>
-                                    <ul>
-                                        <li>Идея закона, стоящего над правителем</li>
-                                        <li>Признание права на свободу вероисповедания</li>
-                                        <li>Принцип соразмерности наказания</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        h2 {
+            font-size: 2.6rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
 
-                    <!-- ERA 2: Античность -->
-                    <div class="era-card">
-                        <div class="era-number">02</div>
-                        <div class="era-content">
-                            <div class="era-header">
-                                <h3 class="era-title">Естественное право</h3>
-                                <span class="era-period">V до н.э. – II в. н.э.</span>
-                            </div>
-                            <div class="era-grid">
-                                <div class="era-info">
-                                    <p class="era-text">
-                                        Греческие философы (стоики) и римские юристы разработали концепцию 
-                                        <strong>ius naturale</strong> — права, которое присуще человеку от природы, независимо от государства. 
-                                        Цицерон писал: «Есть истинный закон — это правильный разум в согласии с природой. Он применим ко всем народам и на все времена». 
-                                        Римское право впервые разделило <strong>право народов</strong> (универсальное) и <strong>право граждан</strong> (локальное).
-                                    </p>
-                                    <p class="era-quote">
-                                        «Все люди рождаются свободными и равными в своем достоинстве и правах» — эта идея, записанная через 2000 лет, родилась именно тогда.
-                                    </p>
-                                </div>
-                                <div class="era-impact">
-                                    <h4><i class="fas fa-brain"></i> Интеллектуальный прорыв</h4>
-                                    <ul>
-                                        <li>Право выше власти</li>
-                                        <li>Равенство по природе (у стоиков)</li>
-                                        <li>Международное право (ius gentium)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        .section-subhead {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #3e3e3e;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
 
-                    <!-- ERA 3: Средневековье и хартии -->
-                    <div class="era-card">
-                        <div class="era-number">03</div>
-                        <div class="era-content">
-                            <div class="era-header">
-                                <h3 class="era-title">Великие хартии</h3>
-                                <span class="era-period">XIII–XVII вв.</span>
-                            </div>
-                            <div class="era-grid">
-                                <div class="era-info">
-                                    <p class="era-text">
-                                        В 1215 году английские бароны заставили короля Иоанна подписать <strong>Magna Carta</strong>. 
-                                        Документ впервые устанавливал: король не может нарушать закон, а свободные люди имеют право на суд равных. 
-                                        Это стало символом ограничения власти. Позже <strong>Habeas Corpus Act</strong> (1679) запретил произвольные аресты, 
-                                        а <strong>Билль о правах 1689 года</strong> утвердил верховенство парламента.
-                                    </p>
-                                    <p class="era-quote">
-                                        «Ни один свободный человек не может быть заключен в тюрьму иначе, как по законному приговору равных ему и по закону страны».
-                                    </p>
-                                </div>
-                                <div class="era-impact">
-                                    <h4><i class="fas fa-gavel"></i> Институциональный прорыв</h4>
-                                    <ul>
-                                        <li>Ограничение абсолютной власти</li>
-                                        <li>Право на справедливый суд</li>
-                                        <li>Неприкосновенность личности</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-                    <!-- ERA 4: Эпоха революций -->
-                    <div class="era-card">
-                        <div class="era-number">04</div>
-                        <div class="era-content">
-                            <div class="era-header">
-                                <h3 class="era-title">Декларации и конституции</h3>
-                                <span class="era-period">XVIII–XIX вв.</span>
-                            </div>
-                            <div class="era-grid">
-                                <div class="era-info">
-                                    <p class="era-text">
-                                        Американская (1776) и Французская (1789) революции превратили философские идеи в политические документы. 
-                                        <strong>Декларация независимости</strong> провозгласила право на жизнь, свободу и стремление к счастью как неотчуждаемые. 
-                                        <strong>Декларация прав человека и гражданина</strong> добавила свободу слова, печати, вероисповедания и равенство перед законом. 
-                                        В XIX веке борьба продолжилась: отмена рабства, первые женские конвенции, фабричное законодательство.
-                                    </p>
-                                    <p class="era-quote">
-                                        «Люди рождаются и остаются свободными и равными в правах» (ст.1 Французской декларации).
-                                    </p>
-                                </div>
-                                <div class="era-impact">
-                                    <h4><i class="fas fa-scroll"></i> Политическая реализация</h4>
-                                    <ul>
-                                        <li>Права как основа государства</li>
-                                        <li>Разделение властей</li>
-                                        <li>Расширение прав: отмена рабства</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        /* header */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(145deg, #f2ede8 0%, #faf7f3 100%);
+            border-bottom: 1px solid #d8cfc4;
+            padding: 2rem 1rem;
+        }
 
-                    <!-- ERA 5: XX век и универсальность -->
-                    <div class="era-card">
-                        <div class="era-number">05</div>
-                        <div class="era-content">
-                            <div class="era-header">
-                                <h3 class="era-title">Всеобщая декларация</h3>
-                                <span class="era-period">1948 – наше время</span>
-                            </div>
-                            <div class="era-grid">
-                                <div class="era-info">
-                                    <p class="era-text">
-                                        После ужасов Второй мировой мир осознал: права человека должны быть защищены на международном уровне. 
-                                        <strong>Всеобщая декларация прав человека (1948)</strong>, подготовленная под руководством Элеоноры Рузвельт, 
-                                        стала первым универсальным документом. Ее 30 статей охватывают гражданские, политические, экономические, социальные 
-                                        и культурные права. Позже приняты конвенции против пыток, о правах женщин, детей, инвалидов.
-                                    </p>
-                                    <p class="era-quote">
-                                        «Все люди рождаются свободными и равными в своем достоинстве и правах. Они наделены разумом и совестью и должны поступать в отношении друг друга в духе братства».
-                                    </p>
-                                </div>
-                                <div class="era-impact">
-                                    <h4><i class="fas fa-globe"></i> Глобальный стандарт</h4>
-                                    <ul>
-                                        <li>Универсальность прав</li>
-                                        <li>Международные механизмы защиты</li>
-                                        <li>Права женщин, детей, меньшинств</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        .hero p {
+            font-size: 1.35rem;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            font-style: italic;
+            color: #4b3f35;
+        }
 
-            <!-- ВИЗУАЛЬНЫЙ РАЗРЫВ С ЦИТАТОЙ -->
-            <section class="quote-section">
-                <div class="quote-container">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <p class="quote-text">
-                        Права человека — это не подарок власти, это требование человеческого достоинства.
-                    </p>
-                    <p class="quote-author">— Луис Энрике, правозащитник</p>
-                </div>
-            </section>
+        .quote-badge {
+            margin-top: 3rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #9b7b5e;
+        }
 
-            <!-- СОВРЕМЕННЫЕ ВЫЗОВЫ -->
-            <section class="challenges-section">
-                <div class="container">
-                    <div class="section-header">
-                        <h2 class="section-title">Путь продолжается</h2>
-                        <p class="section-subtitle">Каждое поколение защищает права заново</p>
-                    </div>
-                    <div class="challenges-grid">
-                        <div class="challenge-card">
-                            <i class="fas fa-robot challenge-icon"></i>
-                            <h4>Цифровые права</h4>
-                            <p>Право на приватность, защиту данных, свободу от алгоритмической дискриминации.</p>
-                        </div>
-                        <div class="challenge-card">
-                            <i class="fas fa-leaf challenge-icon"></i>
-                            <h4>Климатическая справедливость</h4>
-                            <p>Право на здоровую окружающую среду и защита тех, кто страдает от экологических кризисов.</p>
-                        </div>
-                        <div class="challenge-card">
-                            <i class="fas fa-hand-holding-heart challenge-icon"></i>
-                            <h4>Социальное равенство</h4>
-                            <p>Борьба с гендерным неравенством, расизмом, дискриминацией меньшинств.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+        /* timeline */
+        .timeline {
+            position: relative;
+            margin: 5rem 0;
+        }
 
-        <!-- ФУТЕР -->
-        <footer class="footer">
-            <div class="container">
-                <p>Цифровой архив истории прав человека · Образовательный проект</p>
-                <p class="footer-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </p>
-            </div>
-        </footer>
-    </div>
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
 
-    <!-- СКРИПТ ДЛЯ АНИМАЦИИ ЧАСТИЦ -->
-    <script>
-        const canvas = document.getElementById('particleCanvas');
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
+        .timeline-year {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #b48b5a;
+            line-height: 1;
+            min-width: 140px;
+            text-align: right;
+            opacity: 0.8;
+        }
 
-        function initCanvas() {
-            width = window.innerWidth;
-            height = window.innerHeight;
-            canvas.width = width;
-            canvas.height = height;
-            
-            // Создаем частицы
-            particles = [];
-            const particleCount = 80;
-            for (let i = 0; i < particleCount; i++) {
-                particles.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.3,
-                    vy: (Math.random() - 0.5) * 0.1,
-                    radius: Math.random() * 2 + 1,
-                    opacity: Math.random() * 0.5 + 0.1
-                });
+        .timeline-desc {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 1.5rem 2rem;
+            border-radius: 30px 8px 30px 8px;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+            border-left: 4px solid #b48b5a;
+            transition: all 0.2s;
+        }
+
+        .timeline-desc:hover {
+            box-shadow: 0 15px 30px -6px rgba(105, 75, 45, 0.15);
+            background: white;
+        }
+
+        .timeline-desc h3 {
+            font-size: 1.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc p {
+            font-size: 1.1rem;
+        }
+
+        /* раздел про красавчиков */
+        .final-warning {
+            background: #1e2a2e;
+            color: #eae1d7;
+            padding: 5rem 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            border-radius: 70px 70px 0 0;
+            box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .final-warning h2 {
+            color: #dfc9b0;
+            border-bottom-color: #7f6b58;
+        }
+
+        .warning-message {
+            font-size: 1.7rem;
+            font-family: 'Cormorant Garamond', serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255,255,240,0.03);
+            border-radius: 60px 20px 60px 20px;
+            border: 1px solid #b7a287;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .warning-message strong {
+            color: #f3d3b5;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .no-beauty {
+            font-size: 3.5rem;
+            margin: 2rem 0 0;
+            opacity: 0.9;
+            font-weight: 600;
+            word-break: break-word;
+        }
+
+        .footer-note {
+            background: #0f0f0f;
+            color: #a6a6a6;
+            padding: 2.5rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-note i {
+            color: #b48b5a;
+            margin: 0 6px;
+        }
+
+        /* простые цитаты */
+        .pull-quote {
+            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: #6e4f32;
+            background: #f3ede7;
+            padding: 2.5rem 3rem;
+            border-radius: 100px 20px 100px 20px;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 5px 0 #d0b69a;
+        }
+
+        /* адаптив */
+        @media (max-width: 700px) {
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .timeline-year {
+                text-align: left;
+                font-size: 2.5rem;
+            }
+            .final-warning {
+                border-radius: 30px 30px 0 0;
+            }
+            .warning-message {
+                font-size: 1.3rem;
+            }
+            h2 {
+                font-size: 2.2rem;
             }
         }
 
-        function drawParticles() {
-            ctx.clearRect(0, 0, width, height);
-            
-            // Радиальный градиент для фона
-            const gradient = ctx.createRadialGradient(width/2, height/2, 0, width/2, height/2, width/2);
-            gradient.addColorStop(0, '#0c0b1a');
-            gradient.addColorStop(0.5, '#1a1a2e');
-            gradient.addColorStop(1, '#16213e');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, width, height);
-            
-            // Рисуем частицы
-            particles.forEach(p => {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
-                ctx.fill();
-                
-                // Двигаем
-                p.x += p.vx;
-                p.y += p.vy;
-                
-                // Возвращаем, если улетели
-                if (p.x < 0) p.x = width;
-                if (p.x > width) p.x = 0;
-                if (p.y < 0) p.y = height;
-                if (p.y > height) p.y = 0;
-            });
-            
-            requestAnimationFrame(drawParticles);
+        /* маленькие детали */
+        .signature-icon {
+            font-size: 2rem;
+            color: #b48b5a;
+            margin: 0 0.5rem;
         }
+        .btn-empty {
+            border: 1px solid #b48b5a;
+            background: transparent;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            color: #2a2a2a;
+            font-weight: 500;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+        .btn-empty:hover {
+            background: #b48b5a;
+            color: white;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d0b69a, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
 
-        window.addEventListener('resize', () => {
-            initCanvas();
-        });
+    <!-- Герой (на 20‑минутный рассказ) -->
+    <section class="hero">
+        <div class="container">
+            <h1>Право <br>быть человеком</h1>
+            <p>Краткая история прав личности — от Хаммурапи до Всеобщей декларации. 20 минут, чтобы вспомнить, как хрупко человеческое достоинство.</p>
+            <div class="quote-badge">
+                <i class="fas fa-feather-alt"></i> эссе о свободе · равенстве · справедливости
+            </div>
+        </div>
+    </section>
 
-        initCanvas();
-        drawParticles();
+    <!-- Основной контент – таймлайн, укладывается в устный рассказ на 20 минут при размеренном темпе -->
+    <main class="container" style="margin-top: -20px; background: #fbf9f7; position: relative; z-index: 2; border-radius: 40px 40px 0 0; padding-top: 3rem;">
+        
+        <!-- короткое вступление -->
+        <p style="font-size: 1.3rem; max-width: 800px; margin-bottom: 3rem;">
+            <i class="fas fa-quote-left" style="color: #b48b5a; margin-right: 10px;"></i> 
+            Права человека — не «подарок» государства. Это результат тысячелетней борьбы, крови и чернил. 
+            Ниже — семь поворотных моментов, о которых стоит рассказать за двадцать минут.
+        </p>
 
-        // Плавный скролл
-        document.querySelector('.scroll-circle').addEventListener('click', () => {
-            window.scrollTo({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+        <!-- Лента времени (7 пунктов) — при чтении вслух с небольшими пояснениями займёт ~15-18 минут -->
+        <div class="timeline">
+            <!-- 1. Кодекс Хаммурапи (ок. 1754 до н.э.) -->
+            <div class="timeline-item">
+                <div class="timeline-year">~ 1754 до н.э.</div>
+                <div class="timeline-desc">
+                    <h3>Кодекс Хаммурапи</h3>
+                    <p>Первые записанные законы, которые пытались защитить слабых от сильных. Принцип «око за око» ограничивал кровную месть. Раб ещё не считался человеком, но появилась идея, что справедливость можно записать.</p>
+                </div>
+            </div>
+            <!-- 2. Кир Великий (539 до н.э.) -->
+            <div class="timeline-item">
+                <div class="timeline-year">539 до н.э.</div>
+                <div class="timeline-desc">
+                    <h3>Цилиндр Кира</h3>
+                    <p>Завоевав Вавилон, персидский царь Кир объявил свободу вероисповедания и отменил рабство для покорённых народов. Часто называют «первой хартией прав человека» (копия хранится в ООН).</p>
+                </div>
+            </div>
+            <!-- 3. Великая хартия вольностей (1215) -->
+            <div class="timeline-item">
+                <div class="timeline-year">1215</div>
+                <div class="timeline-desc">
+                    <h3>Magna Carta</h3>
+                    <p>Английские бароны заставили короля Иоанна признать, что его власть не абсолютна. «Ни один свободный человек не будет заключён в тюрьму иначе, как по закону». Начало habeas corpus.</p>
+                </div>
+            </div>
+            <!-- 4. Билль о правах (1689) -->
+            <div class="timeline-item">
+                <div class="timeline-year">1689</div>
+                <div class="timeline-desc">
+                    <h3>Английский Билль о правах</h3>
+                    <p>Парламент победил короля. Свобода слова, запрет жестоких наказаний, право на петицию. Монарх — под законом. Эти идеи переплыли океан.</p>
+                </div>
+            </div>
+            <!-- 5. Декларация независимости США (1776) -->
+            <div class="timeline-item">
+                <div class="timeline-year">1776</div>
+                <div class="timeline-desc">
+                    <h3>«Все люди сотворены равными»</h3>
+                    <p>Джефферсон написал то, что станет взрывом: право на жизнь, свободу и стремление к счастью. Конечно, рабство сохранялось, но был запущен механизм неотчуждаемых прав.</p>
+                </div>
+            </div>
+            <!-- 6. Декларация прав человека и гражданина (1789) -->
+            <div class="timeline-item">
+                <div class="timeline-year">1789</div>
+                <div class="timeline-desc">
+                    <h3>Французская революция</h3>
+                    <p>«Свобода, собственность, безопасность и сопротивление угнетению». Отмена сословных привилегий, презумпция невиновности. Декларация стала маяком для Европы.</p>
+                </div>
+            </div>
+            <!-- 7. Всеобщая декларация прав человека (1948) -->
+            <div class="timeline-item">
+                <div class="timeline-year">1948</div>
+                <div class="timeline-desc">
+                    <h3>Всеобщая декларация ООН</h3>
+                    <p>После ужасов Второй мировой мир сказал: достоинство присуще всем. 30 статей — от свободы слова до права на отдых. Самый переводимый документ в истории.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- небольшая интерлюдия: расширение прав (женщины, цветные, дети) -->
+        <div class="pull-quote">
+            <i class="fas fa-female sign-icon"></i>  1920 — право голоса женщин в США · 1965 — избирательный акт (цветное население) · 1989 — Конвенция о правах ребёнка   <i class="fas fa-child"></i>
+        </div>
+
+        <!-- Концовка 20-минутного рассказа + призыв -->
+        <section style="text-align: center; margin: 5rem 0 3rem;">
+            <h2 style="border-bottom: none;">Права не работают сами</h2>
+            <p style="font-size: 1.4rem; max-width: 800px; margin: 0 auto;">За каждую статью заплачено тысячами жизней. Права человека — это не статус, а постоянное усилие.</p>
+            <hr>
+        </section>
+    </main>
+
+    <!-- ЗАКЛЮЧИТЕЛЬНЫЙ РАЗДЕЛ: "НЕ БУДЬТЕ КРАСАВЧИКОМ" (как вы просили) -->
+    <section class="final-warning">
+        <div class="container">
+            <h2>⚠️ Не будьте красавчиком</h2>
+            <div class="warning-message">
+                <p>История прав человека — это не парадная галерея «красавчиков». Это боль, протесты, тюрьмы, отказ молчать.</p>
+                <p style="margin: 2rem 0;"><strong>Красавчик</strong> улыбается, когда сжигают книги. <strong>Красавчик</strong> отворачивается, когда избивают слабого. <strong>Красавчик</strong> говорит: «Меня это не касается».</p>
+                <p>Будьте неудобными. Будьте теми, кто помнит: права завоёвываются, а не дарятся. <br>И никогда — слышите? — никогда не будьте красавчиком.</p>
+            </div>
+            <!-- жирная фраза для запоминания -->
+            <div class="no-beauty">
+                <span style="background: rgba(255,200,140,0.15); padding: 0.5rem 1.5rem; display: inline-block; border-radius: 60px;">✧  не красавчик  ✧</span>
+            </div>
+            <!-- дополнительный акцент (цитата) -->
+            <p style="margin-top: 3rem; font-size: 1.2rem;"><i class="fas fa-dove" style="opacity: 0.6;"></i>   «Если вы нейтральны в ситуациях несправедливости, вы выбрали сторону угнетателя.»  — Десмонд Туту</p>
+        </div>
+    </section>
+
+    <!-- footer — красивый и содержательный -->
+    <footer class="footer-note">
+        <div class="container">
+            <p><i class="fas fa-scroll"></i>  История прав человека — эссе для чтения на 20 минут  <i class="fas fa-hourglass-half"></i></p>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem;">Все описанные события — подлинные. Помните о них. <br> Сделано для GitHub — свободное распространение, 2026</p>
+            <p style="margin-top: 1rem;"><i class="fas fa-robot"></i> <i class="fas fa-feather"></i> <i class="fas fa-gavel"></i></p>
+        </div>
+    </footer>
+
+    <!-- маленькая кнопка наверх — для удобства, но необязательна -->
+    <div style="position: fixed; bottom: 20px; right: 20px;">
+        <a href="#" style="background: #b48b5a; color: white; padding: 12px 16px; border-radius: 50px; box-shadow: 0 6px 12px rgba(0,0,0,0.1);"><i class="fas fa-arrow-up"></i></a>
+    </div>
+
 </body>
 </html>
